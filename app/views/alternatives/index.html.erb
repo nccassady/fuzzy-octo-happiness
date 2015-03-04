@@ -1,0 +1,17 @@
+<h1>Listing alternatives</h1>
+<div class="col-md-4">
+  <% @alternatives.each do |alternative| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="pull-right">HRC Score: <%= alternative.hrc_score %></div>
+        <%= alternative.name %>
+      </div>
+      <div class="panel-body">
+        <%= alternative.description %>
+      </div>
+      <div class="panel-footer">
+        Alternative to: <%= link_to alternative.company.name, alternative.company %>
+      </div>
+    </div>
+  <% end %>
+</div>
